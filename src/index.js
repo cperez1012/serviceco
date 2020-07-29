@@ -4,6 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+//STORE -> A GLOBALIZED STATE
+
+//ACTION - INCREMENT
+
+//REDUCER - 
+
+//DISPATCH
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
