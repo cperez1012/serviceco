@@ -5,7 +5,7 @@ import styles from './CountryChoice.module.css';
 import { fetchCountries } from '../../api';
 
 
-const CountryChoice = () => {
+const CountryChoice = ({ handleCountryChange }) => {
 
     const [fetchedCountries, setFetchedCountries] = useState([]);
 
@@ -18,12 +18,13 @@ const CountryChoice = () => {
     fetchAPI();  
     }, [setFetchedCountries]);
 
-    console.log(fetchedCountries);
+    // console.log(fetchedCountries);
 
     return (
         <FormControl className={styles.formControl}>
-            <NativeSelect>
+            <NativeSelect default="" onChange={(event) => handleCountryChange(event.target.value)}>
                 <option value="global">Worldwide</option>
+                {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
             </NativeSelect>
         </FormControl>
     )
